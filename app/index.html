@@ -21,26 +21,33 @@
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-app="morningRoutine">
 
     <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Normalize CSS</li>
-        <li>Sass</li>
-        <li>Modernizr</li>
-        <li>Bourbon & Neat</li>
-        <li>UnderscoreJS</li>
-      </ul>
-      <p>Don't forget to update your readme file!!</p>
+      <form ng-controller="addRoutine as add">
+        <h2>Add Something to Your Routine</h2>
+        <input placeholder="name"/>
+        <input placeholder="time"/>
+        <textarea placeholder="description"></textarea>
+        <button>Add to Routine</button>
+      </form>
+
+      <section ng-controller="showRoutine as list">
+        <ul class="routine-list" ng-repeat="routine in list.routines">
+          <li>
+            <h4>{{routine.name}}</h4>
+            <span>{{routine.time | time}}</span>
+            <p>{{routine.description}}</p>
+          </li>
+        </ul>
+      </section>
     </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
