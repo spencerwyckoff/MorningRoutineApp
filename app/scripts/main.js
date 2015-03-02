@@ -1,56 +1,47 @@
 ;(function() {
 
-	window.app = angular.module('morningRoutine', []);
+	//creating the morningRoutine module, but then also making the ngRoute available
+	angular.module('morningRoutine', ['ngRoute'])
 
-	//Empty Routine Object
-	var addRoutine = {
-		name: '',
-		time: '',
-		description: '',
-		canAdd: false
-	};
+		.constant('PARSE', {
+			//base url
+			URL: 'https://api.parse.com/1/',
 
-	//Array of Routines
-	var myRoutines = [	
-	{
-		name: 'Use the restroom',
-		time: 1,
-		description: '',
-		canAdd: true,
-	},
+			//config is where we put in headers
+			CONFIG: {
+				
+				headers: {
+					'X-Parse-Application-Id': 'dNgpvECpDgxTn8VGbh1L18OzTTrckpM1pfrmcqyR',
+					'X-Parse-REST-API-Key': 'X0DPI6R31dhgIN1pti5UFYHwqNl7nRAPQP4Le5OU',
+					'Content-Type': 'application/json'
+				}
+			}
 
-	{
-		name: 'Calm.com meditation',
-		time: 10,
-		description: 'Immediately upon waking, take 10 minutes to practice mindfullness through a guided meditation.',
-		canAdd: true,
-	},
-
-	{
-		name: 'Lukewarm to cold shower',
-		time: 5,
-		description: 'Start off with the water being lukewarm, finish with the shower being only cold.  This has many physiological benefits and is better than a cup of coffee.',
-		canAdd: true,
-	},
-
-	];
+		})
 
 
-	//Add Routine Controller
-	app.controller('addRoutine', function() {
+		.config( function ($routeProvider) {
 
-		this.addRoutine = addRoutine;
+			$routeProvider
 
-	});	
+				.when('/', {
+					templateUrl: 'scripts/routine/list.tpl.html',
+					controller: 'RoutineController'
+				})
 
-	//Routine List Controller
-	app.controller('showRoutine', function() {
+				.when('/add', {
+					templateUrl: 'scripts/routine/add.tpl.html',
+					controller: 'RoutineController'					
+				})
 
-		this.routines = myRoutines;
+				.otherwise( {
+					template: "This doesnt exist!"
+				});
 
-	});
+		});
 
-	
+		
+
 
 
 }());

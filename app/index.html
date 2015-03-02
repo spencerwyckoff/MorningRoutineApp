@@ -10,6 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -24,35 +25,40 @@
   <body ng-app="morningRoutine">
 
     <div class="hero-unit">
-      <form ng-controller="addRoutine as add">
-        <h2>Add Something to Your Routine</h2>
-        <input placeholder="name"/>
-        <input placeholder="time"/>
-        <textarea placeholder="description"></textarea>
-        <button>Add to Routine</button>
-      </form>
+      
+      <a href="#/"><h2>My Morning Routine</h2></a>      
+      <a  href="#/add"><img id="plus" src="images/add-icon.png"/></a>
+      <br />
+      
+      <div class="container" ng-view ng-controller="RoutineController as routine">
+       
+      </div>
 
-      <section ng-controller="showRoutine as list">
+      <!-- <section ng-controller="showRoutine as list">
         <ul class="routine-list" ng-repeat="routine in list.routines">
           <li>
             <h4>{{routine.name}}</h4>
-            <span>{{routine.time | time}}</span>
+            <span>{{routine.time}}min</span>
             <p>{{routine.description}}</p>
           </li>
         </ul>
-      </section>
+      </section> -->
     </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
-    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/routine/routine.controller.js"></script>
+    <script src="scripts/routine/routine.factory.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

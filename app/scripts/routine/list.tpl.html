@@ -1,0 +1,19 @@
+<ul class="routine-list">
+  <li class="routine-item" ng-repeat= "r in allRoutines" ng-class="">
+		
+		<img id="icon" src="images/check-icon.svg" ng-click="checkRoutine(r.objectId)">    
+
+    <div class="info-container">
+	    <h4>{{r.name}}</h4>
+    	<p>{{r.desc}}</p>
+    </div>
+
+    <div class="icon-container">    	
+    	<span>{{r.time}}</span>
+	    <img src = "images/delete-icon.png" class="delete" ng-click="deleteRoutine(r.objectId)"{{'delete'}}/>
+    </div>
+   
+		
+  	
+  </li>
+</ul>

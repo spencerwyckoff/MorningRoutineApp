@@ -7,22 +7,140 @@ body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-}
+  font-size: 62.5%;
+  font-weight: bold;
 
-li {
-  list-style: none;
-  border: 1px solid black;
-  border-radius: 5px; 
 }
 
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
+  margin: 5% auto 0 auto;
+  width: 95%;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+  overflow: auto;
+  background-color: #fff;
   border-radius: 6px;
-  padding: 60px;
+  padding: 1%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: HSLA(227, 74%, 79%, .8);
+
+    &:hover {
+      color: HSLA(227, 74%, 79%, 1)
+    }
+  }
   
+
+  h2 {
+    display: inline-block;
+    font-size: 6.5rem;
+    margin: 1% 0px;
+  }
+
+  ul {
+    margin: 5% auto;
+    width: 98%;
+    text-align: left;
+
+    .checked {
+      h4 {
+        text-decoration: line-through;
+      }
+    }
+
+    li {
+      list-style: none;
+      border: 2px solid HSLA(226, 75%, 81%, .2);
+      border-radius: 5px; 
+      margin: 2% auto;
+      max-height: 110px;
+      max-width: 675px; 
+      overflow: auto;
+      width: 100%;
+
+      &:hover {
+        border: 2px solid HSLA(226, 75%, 81%, .5);
+      }
+
+      #icon {
+        border-radius: 5px;
+        display: inline-block;
+        float: left;
+        width: 40px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.6;
+        }
+      }
+    }
+  }   
 }
+
+
+
+#plus {
+  float: right;
+  margin: 2% 3%;
+  width: 7%;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+
+
+.info-container {
+  display: inline-block;
+  margin-left: 3%;
+  width: 60%;
+
+  h4 {
+      display: block;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+  p {
+
+  }
+}
+
+.icon-container {
+  display: inline-block;
+  width: 20%;
+  overflow: auto;
+
+  table {
+    display: table;
+
+    th {
+    }
+  }
+  span {
+    display: inline-block;
+    font-size: 4rem;    
+    font-weight: bold;
+  }
+  .delete {
+    display: inline-block;
+    width: 40px;
+    float: right;
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+}
+
+
+
+}
+
+
+
+
