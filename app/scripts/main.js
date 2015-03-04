@@ -21,7 +21,7 @@
 		})
 
 
-		.config( function ($routeProvider) {
+		.config([ '$routeProvider', function ($routeProvider) {
 
 			$routeProvider
 
@@ -49,10 +49,24 @@
 					template: "This doesnt exist!"
 				});
 
-		});
+		}])
 
-		
+		//Run Block - this runs after everything gets setup...  
+	  //in this case - we're checking to see if there is a cookies stored for the current user logged in...
+		.run([ '$rootScope', 'UserFactory', 'PARSE',
 
+	    function ($rootScope, UserFactory, PARSE) {
+
+	      $rootScope.$on('$routeChangeStart', function () {
+	        
+	        // Run my Login Status
+	        UserFactory.status();
+
+	      });
+	    
+		  }
+
+		]);
 
 
 }());

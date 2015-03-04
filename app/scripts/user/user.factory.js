@@ -26,9 +26,9 @@
 	          url: PARSE.URL + 'login',
 	          headers: PARSE.CONFIG.headers,
 	          params: userObj
-	        }).then (function (res) {
-	          console.log(res);
-	          $cookieStore.put('currentUser', res.data);
+	        }).success (function (res) {
+	          console.log(res.objectId);
+	          // $cookieStore.put('currentUser', res.data);
 	          $location.path('/my-list/' + res.objectId);
 	        });
 				};
@@ -38,8 +38,8 @@
 					console.log(userObj);
 					$http.post(PARSE.URL + 'users', userObj, PARSE.CONFIG)
 						.success( function (res) {
-							console.log("registration success: " + res.data);
-							// $location.path('/my-list/' + res.data.objectId);
+							console.log("registration success: " + res);
+							$location.path('/my-list/' + res.objectId);
 						});
 				};
 
@@ -47,7 +47,10 @@
 
 				return {
 					login: loginSingleUser,
-					register: registerSingleUser
+					register: registerSingleUser,
+					status: checkLoginStatus,
+					user: currentUser
+					// logout: logoutUser
 				};
 
 			}
