@@ -1,7 +1,8 @@
 ;(function() {
 
+
 	//creating the morningRoutine module, but then also making the ngRoute available
-	angular.module('morningRoutine', ['ngRoute'])
+	angular.module('morningRoutine', ['ngRoute', 'ngCookies'])
 
 		.constant('PARSE', {
 			//base url
@@ -25,9 +26,19 @@
 			$routeProvider
 
 				.when('/', {
+					templateUrl: 'scripts/user/user.login.tpl.html',
+					controller: 'UserController'
+				})
+
+				.when('/register', {
+					templateUrl: 'scripts/user/user.register.tpl.html',
+					controller: 'UserController'
+				})
+
+				.when('/my-list/:id', {
 					templateUrl: 'scripts/routine/list.tpl.html',
 					controller: 'RoutineController'
-				})
+				})				
 
 				.when('/add', {
 					templateUrl: 'scripts/routine/add.tpl.html',

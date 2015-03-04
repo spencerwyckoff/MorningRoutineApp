@@ -1,6 +1,20 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 
 // Custom Styles
 body {
@@ -9,23 +23,22 @@ body {
   color: #333;
   font-size: 62.5%;
   font-weight: bold;
-
+  min-width: 320px;
 }
 
+img {max-width:100;}
+
+
+
 .hero-unit {
-  margin: 5% auto 0 auto;
-  width: 95%;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
+  margin: 2% auto 0 auto;
+  width: 98%;
   overflow: auto;
   background-color: #fff;
   border-radius: 6px;
-  padding: 1%;
-  text-align: center;
 
   a {
-    text-decoration: none;
+    // text-decoration: none;
     color: HSLA(227, 74%, 79%, .8);
 
     &:hover {
@@ -34,16 +47,10 @@ body {
   }
   
 
-  h2 {
-    display: inline-block;
-    font-size: 6.5rem;
-    margin: 1% 0px;
-  }
+
 
   ul {
-    margin: 5% auto;
-    width: 98%;
-    text-align: left;
+    margin: 1% auto;
 
     .checked {
       h4 {
@@ -55,11 +62,13 @@ body {
       list-style: none;
       border: 2px solid HSLA(226, 75%, 81%, .2);
       border-radius: 5px; 
-      margin: 2% auto;
-      max-height: 110px;
-      max-width: 675px; 
+      height: auto;
+      margin: 1% auto;
+      min-width: 350px;
       overflow: auto;
+      padding: 1%;
       width: 100%;
+
 
       &:hover {
         border: 2px solid HSLA(226, 75%, 81%, .5);
@@ -68,12 +77,11 @@ body {
       #icon {
         border-radius: 5px;
         display: inline-block;
-        float: left;
-        width: 40px;
-
+        font-size: 3rem;
+        margin: 0px 1%;
         &:hover {
           cursor: pointer;
-          opacity: 0.6;
+          color: green;
         }
       }
     }
@@ -96,39 +104,33 @@ body {
 
 .info-container {
   display: inline-block;
-  margin-left: 3%;
+  margin: 0px 3%;
+  overflow: auto;
   width: 60%;
 
-  h4 {
-      display: block;
-      font-size: 2em;
+  h3 {
       font-weight: bold;
+      margin: 0 auto;
     }
 
   p {
-
+    font-size: .8em;
   }
 }
 
 .icon-container {
-  display: inline-block;
+  float: right;
   width: 20%;
-  overflow: auto;
 
-  table {
-    display: table;
-
-    th {
-    }
-  }
-  span {
+  h3 {
     display: inline-block;
-    font-size: 4rem;    
     font-weight: bold;
+    margin: 0 auto;
   }
+
   .delete {
     display: inline-block;
-    width: 40px;
+    width: 30px;
     float: right;
     &:hover {
       opacity: 0.5;

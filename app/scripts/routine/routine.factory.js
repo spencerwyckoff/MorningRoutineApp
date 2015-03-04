@@ -3,7 +3,7 @@
 
 	angular.module('morningRoutine')
 
-		.factory('RoutineFactory', ['$http', 'PARSE', '$location', '$rootScope', 
+		.factory('RoutineFactory', ['$http', 'PARSE', '$location', '$rootScope', '$route',
 
 			function ($http, PARSE, $location, $rootScope, $route) {
 

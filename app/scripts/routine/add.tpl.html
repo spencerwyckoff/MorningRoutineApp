@@ -1,6 +1,28 @@
-<form ng-submit="addRoutine(routine)"> 
-  <input ng-model="routine.name" placeholder="name"/> <br />
-  <input ng-model="routine.time" placeholder="time"/> <br />
-  <textarea ng-model="routine.desc" placeholder="description"></textarea> <br />
-  <button>Add to Routine</button>
+<h3>Add a New Routine</h3>
+<form ng-submit="addRoutine(routine)">
+	<div class="row">
+    <div class="small-12 columns">
+      <label>Routine Name
+        <input ng-model="routine.name" type="text"/>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <label>Time it Takes (min)
+        <input ng-model="routine.time" type="number"/>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <label>Description
+        <textarea ng-model="routine.desc" placeholder="description"></textarea>
+      </label>
+    </div>
+  </div> 
+  <div class="row">
+    <button class="small-3 small-centered columns button radius large">Add Routine</button>
+  </div>
 </form>
+

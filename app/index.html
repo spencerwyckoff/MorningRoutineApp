@@ -11,6 +11,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -24,15 +25,32 @@
   </head>
   <body ng-app="morningRoutine">
 
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#/">My Morning Routine</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><a href="#/add">Add a Routine</a></li>
+          <li class="has-dropdown">
+            <a href="">User Menu</a>
+            <ul class="dropdown">
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
     <div class="hero-unit">
       
-      <a href="#/"><h2>My Morning Routine</h2></a>      
-      <a  href="#/add"><img id="plus" src="images/add-icon.png"/></a>
-      <br />
-      
-      <div class="container" ng-view ng-controller="RoutineController as routine">
-       
-      </div>
+      <div class="container" ng-view></div>
 
       <!-- <section ng-controller="showRoutine as list">
         <ul class="routine-list" ng-repeat="routine in list.routines">
@@ -52,6 +70,11 @@
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+    <script src="../bower_components/foundation/js/foundation.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -59,6 +82,9 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/routine/routine.controller.js"></script>
     <script src="scripts/routine/routine.factory.js"></script>
+    <script src="scripts/user/user.controller.js"></script>
+    <script src="scripts/user/user.factory.js"></script>
+    
     <!-- endbuild -->
 </body>
 </html>

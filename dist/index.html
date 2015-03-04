@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Assignment19 CRUD</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="styles/vendor.css">
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+  </head>
+  <body ng-app="morningRoutine">
+
+    <div class="hero-unit">
+      
+      <a href="#/"><h2>My Morning Routine</h2></a>      
+      <a  href="#/add"><img id="plus" src="images/add-icon.png"/></a>
+      <br />
+      
+      <div class="container" ng-view ng-controller="RoutineController as routine">
+       
+      </div>
+
+      <!-- <section ng-controller="showRoutine as list">
+        <ul class="routine-list" ng-repeat="routine in list.routines">
+          <li>
+            <h4>{{routine.name}}</h4>
+            <span>{{routine.time}}min</span>
+            <p>{{routine.description}}</p>
+          </li>
+        </ul>
+      </section> -->
+    </div>
+
+    <script src="scripts/vendor.js"></script>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

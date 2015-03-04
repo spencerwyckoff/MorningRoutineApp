@@ -1,5 +1,7 @@
 ;(function() {
 
+	'use strict';
+
 	angular.module('morningRoutine')
 
 	//Setup Routine Controller
@@ -15,6 +17,7 @@
 
 
 			$scope.addRoutine = function (r) {
+				r.isComplete = false;
 				RoutineFactory.add(r);
 			};
 
@@ -36,19 +39,15 @@
 				});
 			};
 
-
-			$scope.checkStatus = "";			
-
-			$scope.checkRoutine = function (r) {
+			$scope.completeRoutine = function (r) {
 				for (var i = 0; i < $scope.allRoutines.length; i++) {
 						var obj = $scope.allRoutines[i];
+						
 						
 					if (obj.objectId === r) {
 						$scope.checkStatus = "checked";
 					}
 				}
-
-
 
 				if ($scope.checkStatus !== "checked") {
 					console.log('checked');
