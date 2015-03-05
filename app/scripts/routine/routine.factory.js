@@ -17,7 +17,7 @@
 					$http.post(PARSE.URL + 'classes/Routine', obj, PARSE.CONFIG)
 						.success( function (data) {							
 							$rootScope.$broadcast('routine:added');
-							$location.path('/');
+							$location.path('/my-list/' + data.objectId);
 						});
 				};
 
